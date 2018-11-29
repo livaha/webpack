@@ -1,11 +1,20 @@
 {
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "> 2018年11月29日更新，目前 webpack 已经更新值 4.26.1 ，本文所用到的各种库或多或少有些过时，跟着代码操作下来可能会遇到各种问题，不过 webpack 的主体思想没变，所以还是希望本文对新学 webpack 的你，有所帮助。此外用基于 webpack 4.26.1 [写了一个简单的demo，如果遇到啥问题，可以参考](https://github.com/Val-Zhang/webpack-demo-client)，之后应该会逐步来完善这个demo，如果有啥通用的想实现的功能，也可以在里面提 issue。",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack",
-    "server": "..\\node_modules\\.bin\\webpack-dev-server --open"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "vue": "^2.5.17"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbwxffnhc/webpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbwxffnhc/webpack/issues"
+  },
+  "homepage": "https://github.com/sbwxffnhc/webpack#readme"
 }
