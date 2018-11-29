@@ -24,11 +24,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 		    {
                 test: /(\.jsx|\.js)$/,
                 use: {
-                    loader: "babel-loader",
-                    options: {
-						presets: ['@babel/preset-env'],
-						plugins: ['@babel/transform-runtime']
-                    }
+                    loader: "babel-loader"
                 },
                 exclude: /node_modules/
             },
@@ -43,6 +39,8 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 						loader: "style-loader"
 					}, {
 						loader: "css-loader"
+					},{
+						loader: "postcss-loader"
 					}
 				]
 			}

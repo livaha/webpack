@@ -1,11 +1,6 @@
 {
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
     "server": "..\\node_modules\\.bin\\webpack-dev-server --open"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "vue": "^2.5.17"
   }
 }

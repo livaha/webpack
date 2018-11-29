@@ -44,9 +44,12 @@ npm install --save-dev webpack
 2. package.json文件已经就绪，我们在本项目中安装Webpack作为依赖包
 
 ```
+文件夹名不要与webpack重
 // 安装Webpack
 npm install --save-dev webpack
 ```
+
+3. 这里是执行的vue程序，所以要安装vue: `npm i --save vue`
 
 
 
@@ -99,6 +102,23 @@ module.exports={
 ~~~
 npm start
 ~~~
+
+
+
+==>   当code为执行目录，其上级为`node_modules`目录，此时，在code目录里面添加一个package.json文件,   如果再要安装其他东西，就应当到code目录的上级目录去安装，不然npm会因package.json文件的存在误认为要安装在本目录下
+
+~~~
+{
+  "scripts": {
+	"start": "webpack",
+    "server": "..\\node_modules\\.bin\\webpack-dev-server --open"
+  }
+}
+~~~
+
+
+
+
 
 #### 5. Webpack的强大功能
 
@@ -194,6 +214,36 @@ Loaders需要单独安装并且需要在`webpack.config.js`中的`modules`关键
 #### 7.1 Babel的配置
 
 文档：https://webpack.docschina.org/loaders/babel-loader/
+
+##### 安装 
+
+> webpack 3.x | babel-loader 8.x | babel 7.x
+
+```
+//npm install babel-loader@8.0.0-beta.0 @babel/core @babel/preset-env webpack --save-dev
+npm i babel-preset-react --save-dev
+npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react
+
+
+```
+
+
+
+1 这些安装有时也乱了套，会出现版本不兼容的情况，所以可以根据出现的bug提示要安装的模块，如![1543493687850](assets/1543493687850.png)
+
+Error: Cannot find module '@babel/plugin-transform-runtime' from 'F:\GitHub\demo-webpack\code'
+
+npm i @babel/plugin-transform-runtime --save-dev
+
+
+
+2 如果在你的 package.json 依赖包中既有 babel 7.0 版本，又有 babel 6.0 版本，就会报这个错误
+
+　　很现实就是两个版本是不兼容的
+
+![1543493935373](assets/1543493935373.png)
+
+Babel乱了
 
 Babel其实可以完全在 `webpack.config.js` 中进行配置，但是考虑到babel具有非常多的配置选项，在单一的`webpack.config.js`文件中进行配置往往使得这个文件显得太复杂，因此一些开发者支持把babel的配置选项放在一个单独的名为 ".babelrc" 的配置文件中。我们现在的babel的配置并不算复杂，不过之后我们会再加一些东西，因此现在我们就提取出相关部分，分两个配置文件进行配置（webpack会自动调用`.babelrc`里的babel配置选项），如下：
 
